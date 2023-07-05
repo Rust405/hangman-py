@@ -102,32 +102,41 @@ def drawMan(wrongAttemptCtr):
 
     print('-' * 5)
 
+    POLE = '|  '
+    ROPE = ' |'
+    HEAD = ' O'
+    ONEARM = '/|'
+    BOTHARMS = ONEARM + '\\'
+    TORSO = ' |'
+    ONELEG = '/'
+    BOTHLEGS = ONELEG + ' \\'
+
     if wrongAttemptCtr >= 1:
-        print('  | ')
+        print(POLE + ROPE)
 
     if wrongAttemptCtr >= 2:
-        print('  O ')
+        print(POLE + HEAD)
 
     if wrongAttemptCtr == 3:
-        print(' /| ')
+        print(POLE + ONEARM)
 
     if wrongAttemptCtr >= 4:
-        print(' /|\\')
+        print(POLE + BOTHARMS)
 
     if wrongAttemptCtr >= 5:
-        print('  | ')
+        print(POLE + TORSO)
 
     if wrongAttemptCtr == 6:
-        print(' / ')
+        print(POLE + ONELEG)
 
     if wrongAttemptCtr >= 7:
-        print(' / \\')
+        print(POLE + BOTHLEGS)
 
     for i in range(0, wrongAttemptCtr):
         if i != 3 and i != 6:
             lines -= 1
 
-    print('\n' * lines)
+    print((POLE + '\n') * lines)
 
 
 def drawLines(guessWord):
