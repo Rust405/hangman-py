@@ -3,6 +3,7 @@ import requests
 
 base_url = 'https://random-word-api.herokuapp.com/'
 
+
 def menu():
     os.system('cls')
 
@@ -103,31 +104,28 @@ def drawMan(wrongAttemptCtr):
 
     if wrongAttemptCtr >= 1:
         print('  | ')
-        lines -= 1
 
     if wrongAttemptCtr >= 2:
         print('  O ')
-        lines -= 1
 
     if wrongAttemptCtr == 3:
         print(' /| ')
-        lines -= 1
 
     if wrongAttemptCtr >= 4:
         print(' /|\\')
-        lines -= 1
 
     if wrongAttemptCtr >= 5:
         print('  | ')
-        lines -= 1
 
     if wrongAttemptCtr == 6:
         print(' / ')
-        lines -= 1
 
     if wrongAttemptCtr >= 7:
         print(' / \\')
-        lines -= 1
+
+    for i in range(0, wrongAttemptCtr):
+        if i != 3 and i != 6:
+            lines -= 1
 
     print('\n' * lines)
 
